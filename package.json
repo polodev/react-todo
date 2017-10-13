@@ -17,7 +17,7 @@
   "scripts": {
     "start": "webpack",
     "dev": "webpack -w",
-    "prod": "NODE_ENV=production && webpack"
+    "prod": "NODE_ENV=production webpack"
   }
 
 }
