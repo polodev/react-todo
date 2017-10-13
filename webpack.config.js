@@ -1,12 +1,20 @@
+var webpack = require('webpack')
 var path = require('path')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 var isProd = process.env.NODE_ENV === 'production'
 function  getPlugins  () {
   var plugins = []
+  plugins.push(
+    new webpack.DefinePlugin({
+        'process.env': {
+          NODE_ENV: JSON.stringify('production')
+        }
+      }),
+    )
+
   if (isProd) {
-    plugins.push(new UglifyJSPlugin())
+    plugins.push(new webpack.optimize.UglifyJsPlugin())
   }
-    plugins.push(new UglifyJSPlugin())
   return plugins
 }
 
@@ -37,8 +45,6 @@ var config = {
   },
   plugins: getPlugins()
 }
-if (process.env.NODE_ENV  == 'production') {
-  config.pugins.push(new UglifyJSPlugin());
-}
+
 module.exports = config
 

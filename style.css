@@ -1,18 +1,69 @@
 body {
+  font-family: 'fira code', Monaco, Menlo, Consolas, Arial;
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
   width: 80%;
-  margin: 0 auto;
-  font-family: sans-serif;
-  background: #eee;
-}
-input {
-  padding: 5px;
-  color: #333;
-}
+  margin: 20px auto;
+  background: beige;
+  padding: 15px;
 
+}
+span {
+  display: inline-block;
+  padding: 5px 10px;
+}
+.red {
+  color: crimson;
+}
+ul {
+  list-style: none;
+}
+ul li {
+  cursor: pointer;
+}
 .complete {
   text-decoration: line-through;
-  color: crimson;
 }
-.highlight {
-  color: crimson;
+input {
+  font-family: 'fira code', Monaco, Menlo, Consolas, Arial;
+  padding: 10px;
+  font-size: 16px;
+}
+button {
+  border: 1px solid paleturquoise;
+  background: tomato;
+  color: white;
+  font-size: 16px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+button.delete {
+  background: tomato;
+  border: 1px solid skyblue;
+  color: white;
+}
+button.edit {
+  border: 1px solid salmon;
+  background: cadetblue;
+  color: white;
+}
+button:active, button:focus {
+  outline: none;
+}
+button#update_btn {
+  padding: 10px;
+  background: steelblue;
+}
+button#create_btn {
+  padding: 10px;
+  background: palevioletred;
+}
+li {
+  margin-bottom: 5px;
+}
+
+input:focus {
+  outline: none;
 }

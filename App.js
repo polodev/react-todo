@@ -133,14 +133,14 @@ export default class App extends Component {
             <div>
               <h1>Update todo</h1>
               <input onKeyDown={this._updateKeyDown} onChange={this._updateTodoText} value={updateTodoText} type="text"/>
-              <button onClick={() => {
+              <button id="update_btn" onClick={() => {
                 this._updateTodo(this.state.updateTodo.id)
               }}>update todo</button>
             </div> : null
         }
         <h1>create todo</h1>
         <input onChange={this._createTodoText} onKeyDown={this._createKeyDown} value={createTodoText} type="text"/>
-        <button onClick={() => this._createTodo() }>create todo</button>
+        <button id="create_btn" onClick={() => this._createTodo() }>create todo</button>
       </div>
     )
   }
@@ -148,15 +148,11 @@ export default class App extends Component {
 
 const GenerateList = (props) => {
   const {todo, _editTodo, _deleteTodo, _toggleTodoCompletion} = props;
-  return todo.complete ? 
-  <li className="complete">
-    <span onClick={() => _toggleTodoCompletion(todo.id)} className="complete">{todo.text}</span>
-    <button onClick={() => { _editTodo(todo.id) }}>edit</button>
-    <button onClick={() => {_deleteTodo(todo.id)}}>delete</button>
-  </li> : 
-  <li>
-    <span onClick={() => _toggleTodoCompletion(todo.id)}>{todo.text}</span>
-    <button onClick={() => { _editTodo(todo.id) }}>edit</button>
-    <button onClick={() => {_deleteTodo(todo.id)}}>delete</button>
-  </li>
+  const span = todo.complete ? <span onClick={() => _toggleTodoCompletion(todo.id)} className="complete">{todo.text}</span> : <span onClick={() => _toggleTodoCompletion(todo.id)}>{todo.text}</span>
+
+  return (<li className="complete"> {span}
+    <button className="edit" onClick={() => { _editTodo(todo.id) }}>edit</button>
+    <button className="delete" onClick={() => {_deleteTodo(todo.id)}}>delete</button>
+  </li>)
+  
 } 
