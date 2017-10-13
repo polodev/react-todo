@@ -1,0 +1,12 @@
+body {
+  width: 80%;
+  margin: 0 auto;
+}
+.complete {
+  text-decoration: line-through;
+  color: crimson;
+}
+
+.red {
+  color: crimson;
+}
