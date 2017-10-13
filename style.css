@@ -1,12 +1,18 @@
 body {
   width: 80%;
   margin: 0 auto;
+  font-family: sans-serif;
+  background: #eee;
 }
+input {
+  padding: 5px;
+  color: #333;
+}
+
 .complete {
   text-decoration: line-through;
   color: crimson;
 }
-
-.red {
+.highlight {
   color: crimson;
 }

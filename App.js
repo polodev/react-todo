@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import './style.css';
 import todos from './Todos.js'
+import './style.css'
 export default class App extends Component {
   constructor () {
     super();
